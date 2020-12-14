@@ -15,7 +15,7 @@ To train and inference on customized datasets, please follow the steps below:
 
 1.	Use LabelImg or other tools to label your data in PASCAL VOC format. Store images and annotations in Dataset/training_20201220.
 2.	Create new folder: Dataset/custom/annotations
-3.	Put your corre_custom.npy, list_obj.txt and list_vb.txt into custom/annotations.  
+3.	Put your corre_custom.npy, list_obj.txt and list_vb.txt into Dataset/custom/annotations.  
 4.  cd src
 5.  Convert annotations from .xml to .json and copy images to custom
 `python3 pascal2json.py --input-folder Dataset/training_20201220 --output-folder Dataset/custom`
