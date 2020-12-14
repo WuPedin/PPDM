@@ -12,18 +12,14 @@ To train and inference on customized datasets, please follow the steps below:
     git clone https://github.com/WuPedin/PPDM.git
 
 ## Generate Customized Dataset
-Warning: This script only  works if there is only one Person. Objects will be annotated as No_Interaction with that Person.
-1.	Use LabelImg or other tools to label your data in PASCAL VOC format.
-2.	Create new folder: custom/annotations
-3.	Put your corre_custom.npy, list_obj.txt and list_vb.txt into custom/annotations.  
 
-    Generate corre.npy like this:  
-    Objects: Person, Bed  
-    Verbs: Sit, Lie, Stand  
-    da = np.array([[0,1],  
-           [0,1],  
-           [0,1]], dtype=np.float16)  
-    np.save('corre_custom.npy', da)         
+1.	Use LabelImg or other tools to label your data in PASCAL VOC format. Store images and annotations in Dataset/training_20201220.
+2.	Create new folder: Dataset/custom/annotations
+3.	Put your corre_custom.npy, list_obj.txt and list_vb.txt into custom/annotations.  
+4.  cd src
+5.  Convert annotations from .xml to .json and copy images to custom
+`python3 pascal2json.py --input-folder Dataset/training_20201220 --output-folder Dataset/custom`
+Warning: This script only  works if there is only one Person. Objects will be annotated as No_Interaction with that Person.
 
 ## Train
 
