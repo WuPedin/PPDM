@@ -22,6 +22,14 @@ To train and inference on customized datasets, please follow the steps below:
 Warning: This script only  works if there is only one Person. Objects will be annotated as No_Interaction with that Person.
 
 ## Train
+`cd src`
+Modify num_classes, num_classes_verb, default_resolution  
+`vim src/lib/datasets/dataset/custom.py`
+Modify default_dataset_info  
+`vim src/lib/opts.py. default_dataset_info`
+Modify rules to save model: if epoch > 100:  
+`vim main.py`
+`python3 main.py  custom --batch_size 12 --master_batch 7 --lr 5e-5 --gpus 1,2 --num_workers 0  --load_model ../models/ctdet_coco_dla_2x.pth --image_dir images/train --dataset custom --exp_id custom --num_epochs 200`
 
 ## Test
 
