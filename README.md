@@ -17,13 +17,13 @@ Warning: This script only  works if there is only one Person. Objects will be an
 2.	Create new folder: custom/annotations
 3.	Put your corre_custom.npy, list_obj.txt and list_vb.txt into custom/annotations.  
 
-`Generate corre.npy like this:`
-`Objects: Person, Bed`
-`Verbs: Sit, Lie, Stand`
-`da = np.array([[0,1],
-           [0,1],
-           [0,1]], dtype=np.float16)`
-`np.save('corre_custom.npy', da)`         
+    Generate corre.npy like this:  
+    Objects: Person, Bed  
+    Verbs: Sit, Lie, Stand  
+    da = np.array([[0,1],  
+           [0,1],  
+           [0,1]], dtype=np.float16)  
+    np.save('corre_custom.npy', da)         
 
 ## Train
 
