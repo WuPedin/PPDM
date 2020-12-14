@@ -7,9 +7,9 @@ To train on HICO-Det and HOI-A datasets, please check https://github.com/YueLiao
 To train and inference on customized datasets, please follow the steps below:
 
 ## Environment
-`sudo docker build -t hoi/ppdm .  
-sudo docker run --runtime=nvidia --name ppdm --shm-size 8G -t -i hoi/ppdm:latest /bin/bash  
-git clone
+    sudo docker build -t hoi/ppdm .  
+    sudo docker run --runtime=nvidia --name ppdm --shm-size 8G -t -i hoi/ppdm:latest /bin/bash  
+    git clone https://github.com/WuPedin/PPDM.git
 `
 
 ## Generate Customized Dataset
