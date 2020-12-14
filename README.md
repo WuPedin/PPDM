@@ -23,14 +23,30 @@ Warning: This script only  works if there is only one Person. Objects will be an
 
 ## Train
 `cd src`  
-Modify num_classes, num_classes_verb, default_resolution  
+
+1. Modify num_classes, num_classes_verb, default_resolution  
 `vim src/lib/datasets/dataset/custom.py`  
-Modify default_dataset_info  
+
+2. Modify default_dataset_info  
 `vim src/lib/opts.py. default_dataset_info`  
-Modify rules to save model: if epoch > 100:  
+
+3. Modify rules to save model if you need. For example: if epoch > 100:  
 `vim main.py`  
+
+4. Start training  
 `python3 main.py  custom --batch_size 12 --master_batch 7 --lr 5e-5 --gpus 1,2 --num_workers 0  --load_model ../models/ctdet_coco_dla_2x.pth --image_dir images/train --dataset custom --exp_id custom --num_epochs 200`  
 
-## Test
+## Inference
+`cd src`  
+
+1.	Modify model_begin, model_end for testing  
+`vim test_hoi.py`  
+
+2.	Modify obj_cate_ids and verb_cate_ids  
+`vim lib/detectors/hoidet.py`  
+
+3.  Start inferencing  
+`python3 test_hoi.py custom --exp_id custom --gpus 3 --dataset custom --image_dir images/test --test_with_eval --load_model ../exp/custom/custom/model_100.pth --save_predictions --K 5` 
 
 ## Visualization
+`python3 visualize_res.py --img-folder ..\Dataset\custom\images\test --verb-config ..\Dataset\custom\annotations\list_vb.txt --res-path ..\Dataset\custom\res\best_predictions.json`  
